@@ -1,0 +1,54 @@
+# Dependency directories
+node_modules/
+vendor/
+bower_components/
+news portal\refrensi/*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+public/uploads/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache directories
+.cache/
+.temp/
+
+# Media files (if stored locally during development)
+uploads/
+media/
+images/
+
+# Database files
+*.sql
+*.sqlite
+
+# Backup files
+*.bak
+*.backup
+*~
