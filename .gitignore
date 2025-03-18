@@ -2,7 +2,7 @@
 node_modules/
 vendor/
 bower_components/
-news portal\refrensi/*
+news portal/refrensi/*
 
 # Environment files
 .env
