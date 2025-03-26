@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warung Makan Pak Wicaksono - Hidangan khas Jawa Timur">
+    <title>Warung Makan Pak Wicaksono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Warung Makan Pak Wicaksono</h1>
+            <p class="tagline">Harga Murah, Rasa Restoran Bintang 5</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="about-section">
+            <figure class="about-image">
+                <img src="assets/Surabaya.jpg" alt="Suasana Restaurant">
+            </figure>
+            <article class="about-content">
+                <h2>Tentang Kami</h2>
+                <p>Restoran Kami berdiri sejak tahun 2024 dan telah menjadi salah satu pilihan utama bagi pecinta kuliner di Surabaya. Restoran kami menyajikan berbagai macam makanan khas Jawa Timur, menggunakan bahan-bahan segar dan berkualitas tinggi untuk memastikan hidangan yang kami sajikan selalu lezat, bergizi dan terjangkau.</p>
+            </article>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <h2>Menu Kami</h2>
+            <div class="menu-filter">
+                <button class="filter-btn active" data-filter="all">Semua Menu</button>
+                <button class="filter-btn" data-filter="main">Menu Utama</button>
+                <button class="filter-btn" data-filter="drink">Minuman</button>
+            </div>
+        
+            <div class="menu-container">
+                <article class="menu-category" data-category="main">
+                    <h3>Menu Utama</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Nasi Goreng Spesial</h4>
+                                    <p>Nasi goreng dengan telur, ayam, udang, dan sayuran segar</p>
+                                    <span class="price">Rp 18.000</span>
+                                </div>
+                                <img src="assets/nasi-goreng.jpg" alt="Nasi Goreng Spesial">
+                            </div>
+        
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Mie Goreng Jawa</h4>
+                                    <p>Mie goreng dengan telur, ayam, dan sayuran segar</p>
+                                    <span class="price">Rp 15.000</span>
+                                </div>
+                                <img src="assets/mie-goreng.jpg" alt="Mie Goreng Jawa">
+                            </div>
+        
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Soto Ayam Lamongan</h4>
+                                    <p>Soto ayam dengan potongan ayam, telur, dan bawang goreng</p>
+                                    <span class="price">Rp 15.000</span>
+                                </div>
+                                <img src="assets/soto-ayam.jpg" alt="Soto Ayam">
+                            </div>
+        
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Rawon</h4>
+                                    <p>kuah hitam yang berasal dari kluwek, disajikan dengan nasi, tauge, telur asin, dan sambal.</p>
+                                    <span class="price">Rp 15.000</span>
+                                </div>
+                                <img src="assets/rawon.jpg" alt="Rawon">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+        
+                <article class="menu-category" data-category="drink">
+                    <h3>Minuman</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Es Teh Manis</h4>
+                                    <p>Teh manis segar dengan es batu</p>
+                                    <span class="price">Rp 5.000</span>
+                                </div>
+                                <img src="assets/es-teh.jpg" alt="Es Teh Manis">
+                            </div>
+        
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Es Jeruk</h4>
+                                    <p>Jeruk segar dengan es batu</p>
+                                    <span class="price">Rp 5.000</span>
+                                </div>
+                                <img src="assets/es-jeruk.jpg" alt="Es Jeruk">
+                            </div>
+        
+                            <div class="menu-content">
+                                <div class="menu-details">
+                                    <h4>Es Campur</h4>
+                                    <p>Es campur dengan berbagai macam buah dan jelly</p>
+                                    <span class="price">Rp 10.000</span>
+                                </div>
+                                <img src="assets/es-campur.jpg" alt="Es Campur">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="contact-section">
+            <h2 class="text-center">Hubungi Kami</h2>
+            <address class="contact-info">
+                <p><i class="fas fa-location-dot"></i> Jl. Kuliner No. 123, Surabaya</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+628123456789" style="text-decoration: none;">0812-3456-789</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@warungpakwicaksono.com" style="text-decoration: none;">info@warungpakwicaksono.com</a></p>
+                <p><a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-link" style="text-decoration: none;">Chat di WhatsApp</a>
+                    <i class="fab fa-whatsapp"></i> 
+                </a></p>
+            </address>
+        </div>
+
+        <div class="social-media">
+            <h3>Ikuti Kami di Media Sosial</h3>
+            <div class="social-links">
+                <a href="https://instagram.com/warungpakwicaksono" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Ikuti kami di Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/warungpakwicaksono" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Ikuti kami di Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://tiktok.com/@warungpakwicaksono" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Ikuti kami di TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 Warung Makan Pak Wicaksono. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
