@@ -1,6 +1,7 @@
 # Tugas 4 Membuat Website Warung Makan dengan HTML 5
 ---
-Link Website: <a href="https://farhanwew.github.io/Web-programming/Restaurant Page/index.html">Warung Makan Pak Wicaksono</a>
+> Live Demo: [Warung Makan Pak Wicaksono](https://farhanwew.github.io/Web-programming/Restaurant%20Page/index.html)
+
 
 ## Tentang Website
 Dokumentasi website Untuk tugas 4:
