@@ -1,0 +1,456 @@
+:root {
+    --primary-color: #c8a97e;
+    --secondary-color: #f8f5f0;
+    --dark-color: #333;
+    --light-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-color);
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+#opening-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 100;
+}
+
+.opening-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.opening-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.opening-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--dark-color);
+}
+
+#enter-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#enter-btn:hover {
+    background: #b5986d;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+.nav-menu {
+    position: fixed;
+    left: 50%;
+    bottom: 85px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-menu.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.nav-menu i {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Add responsive styling for mobile devices */
+@media (max-width: 768px) {
+    .nav-menu {
+        padding: 10px 15px;
+    }
+    
+    .nav-menu ul {
+        gap: 10px;
+    }
+    
+    .nav-menu a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-title .title-segatha {
+    color: var(--primary-color);
+    font-family: 'Smooch', cursive;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #b5986d;
+    transform: translateY(-3px);
+}
+
+/* Header Section */
+#header {
+    text-align: center;
+    padding: 120px 0 80px;
+}
+
+.couple-name-box {
+    margin: 30px 0;
+}
+
+.couple-name-box h2 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.couple-name-box .and {
+    font-family: 'Smooch', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.date {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Couple Section */
+#couple {
+    background-color: var(--light-color);
+}
+
+.couple-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.couple-box-img {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+}
+
+.couple-box-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.couple-box-and {
+    flex: 0 0 100px;
+    text-align: center;
+}
+
+.image-description h4 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.sosmed-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.sosmed-list a {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Events Section */
+.event-box {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.event-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.event-date div:first-child p {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.event-time {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Gallery Section */
+.gallery-photo-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+.gallery-photo-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-photo-box a:hover img {
+    transform: scale(1.03);
+}
+
+/* RSVP Section */
+.rsvp-box {
+    background: var(--light-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group-wedding {
+    margin-bottom: 20px;
+}
+
+.form-group-wedding label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group-wedding input,
+.form-group-wedding textarea,
+.form-group-wedding select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.comment-box {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.comment-item {
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.comment-name {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+footer img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .couple-box {
+        flex-direction: column;
+    }
+    
+    .couple-box-and {
+        flex: 0 0 auto;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(157, 146, 146, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.countdown-item {
+    background: rgba(200, 169, 126, 0.15);  /* Using your primary color with transparency */
+    padding: 25px 15px;
+    border-radius: 15px;
+    min-width: 120px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(200, 169, 126, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    background: rgba(200, 169, 126, 0.25);
+}
+
+.countdown-item span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.countdown-item p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+    font-weight: 500;
+}
