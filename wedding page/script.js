@@ -1,3 +1,13 @@
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const openingScreen = document.getElementById('opening-screen');
     const enterBtn = document.getElementById('enter-btn');
@@ -30,3 +40,5 @@ const countdown = setInterval(function() {
     document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
 }, 1000);
+
+
