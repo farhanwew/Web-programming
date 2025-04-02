@@ -11,6 +11,59 @@
     box-sizing: border-box;
 }
 
+
+
+/* Add responsive flex styles */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.event-box {
+    flex: 1 1 300px;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.couple-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.couple-box-img {
+    flex: 1 1 300px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.gallery-photo-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-photo-box li {
+    flex: 1 1 250px;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .event-box {
+        width: 100%;
+    }
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--dark-color);
