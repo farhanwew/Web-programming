@@ -7,7 +7,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const openingScreen = document.getElementById('opening-screen');
     const enterBtn = document.getElementById('enter-btn');
