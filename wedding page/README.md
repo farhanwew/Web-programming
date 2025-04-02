@@ -6,7 +6,7 @@
 ## Repository
 [GitHub Repository](https://github.com/farhanwew/Web-programming)
 
-## Technologies Used
+## Stack Used
 - HTML
 - CSS
 - JavaScript
