@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 const weddingDate = new Date('June 29, 2025 08:00:00').getTime();
 const countdown = setInterval(function() {
     const now = new Date().getTime();
