@@ -1,13 +1,9 @@
 # Form Project and Indonesia Postal Code
 
-
 ## Live Demo
 You can view the form here: 
-- [Form Demo](path-to-your-deployed-form)
-
-## Files
-- [index.html](./index.html) - Main form structure
-- [styles.css](./styles.css) - Form styling
+- [Indonesia Postal Code](https://farhanwew.github.io/Web-programming/form/Kode%20pos/index.html)
+- [Form Registration](https://farhanwew.github.io/Web-programming/form%20regist/index.html)
 
 ## Getting Started
 1. Clone this repository
@@ -15,5 +11,10 @@ You can view the form here:
 3. Start filling out the form!
 
 ## Technologies Used
-- HTML5
+- HTML
 - CSS3
+- JavaScript
+- [Indonesia Postal Code API](https://alamat.thecloudalert.com/api)
+
+## API Integration
+This project uses the Indonesia Postal Code API to fetch accurate postal code information. The API endpoint used is `https://alamat.thecloudalert.com/api`.
