@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencarian Kode Pos Indonesia</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-map-marker-alt"></i> Pencarian Kode Pos Indonesia</h1>
+
+    <div class="mode-selector">
+      <label for="mode">Mode Pencarian:</label>
+      <select id="mode">
+        <option value="daerah">🔍 Mencari Kode Pos dari Daerah</option>
+        <option value="kodepos">🏠 Input Kode Pos</option>
+      </select>
+    </div>
+
+    <div id="form-daerah">
+      <label for="provinsi">Provinsi:</label>
+      <select id="provinsi"><option value="">-- Pilih Provinsi --</option></select>
+
+      <label for="kabupaten">Kabupaten/Kota:</label>
+      <select id="kabupaten" disabled><option value="">-- Pilih Kabupaten/Kota --</option></select>
+
+      <label for="kecamatan">Kecamatan:</label>
+      <select id="kecamatan" disabled><option value="">-- Pilih Kecamatan --</option></select>
+
+      <label for="kelurahan">Kelurahan/Desa:</label>
+      <select id="kelurahan" disabled><option value="">-- Pilih Kelurahan/Desa --</option></select>
+
+      <button id="cari-daerah">Cari Kode Pos</button>
+    </div>
+
+    <div id="form-kodepos" style="display:none;">
+      <label for="input-kodepos">Masukkan Kode Pos:</label>
+      <input type="text" id="input-kodepos" placeholder="Contoh: 60275">
+      <button id="cari-kodepos">Cari Daerah</button>
+    </div>
+
+    <div id="hasil"></div>
+
+    <script src = 'script.js'></script>
+  </div>
+</body>
+</html>

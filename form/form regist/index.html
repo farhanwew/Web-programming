@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi Mahasiswa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <h1>Form Registrasi Mata Kuliah Mahasiswa Departemen Teknik Informatika</h1>
+    <form id="registrasiForm">
+        <div class="form-group">
+            <label for="nama">Nama Mahasiswa:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama mahasiswa" class="ui-autocomplete-input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="nim">NRP:</label>
+            <input type="text" id="nim" name="nim" placeholder="Masukkan NRP" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Prodi">Prodi:</label>
+            <select name="prodi" id="Prodi" required>
+            <option value="">Pilih Program Studi</option>
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+            <option value="Rekayasa Kecerdasan Artifisial">Rekayasa Kecerdasan Artifisial</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="mataKuliah">Mata Kuliah:</label>
+            <select id="mataKuliah" name="mataKuliah" required>
+                <option value="">Pilih Mata Kuliah</option>
+                <option value="Algoritma dan Pemrograman">Algoritma dan Pemrograman</option>
+                <option value="Struktur Data">Struktur Data</option>
+                <option value="Pemrograman Berorientasi Objek">Pemrograman Berorientasi Objek</option>
+                <option value="Kalkulus">Kalkulus</option>
+                <option value="Pembelajaran Mesin">Pembelajaran Mesin</option>
+                <option value="Konsep Kecerdasan Buatan">Konsep Kecerdasan Buatan</option>
+                <option value="Basis Data">Basis Data</option>
+                <option value="Pemrosesan Bahasa Natural">Pemrosesan Bahasa Natural</option>
+                <option value="Sistem Operasi">Sistem Operasi</option>
+                <option value="Analisis dan Perancangan Sistem">Analisis dan Perancangan Sistem</option>
+                <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                <option value="Pemrograman Web">Pemrograman Web</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="dosen">Dosen Pengampu:</label>
+            <select id="dosen" name="dosen"  required disabled>
+                <option value="">Pilih Dosen</option>
+            </select>
+        </div>
+        
+        <!-- Remove the onclick attribute from the button -->
+        <div class="form-group">
+        <button type="submit">Daftar</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
