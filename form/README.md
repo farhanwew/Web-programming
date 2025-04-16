@@ -1,9 +1,9 @@
-# Form Project and Indonesia Postal Code
+# Form Registration, Dropdown,  and Indonesia Postal Code
 
 ## Live Demo
 You can view the form here: 
 - [Indonesia Postal Code](https://farhanwew.github.io/Web-programming/form/Kode%20pos/index.html)
-- [Form Registration](https://farhanwew.github.io/Web-programming/form%20regist/index.html)
+- [Form Registration](https://farhanwew.github.io/Web-programming/form/form%20regist/index.html)
 
 ## Getting Started
 1. Clone this repository
