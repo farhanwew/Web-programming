@@ -1,22 +1,26 @@
 ## Deskripsi
-Implementasi form sederhana menggunakan AJAX dengan Fetch API untuk pengiriman data secara asynchronous.
+Implementasi form sederhana menggunakan jQuery AJAX untuk pengiriman data secara asynchronous.
 
 ## Struktur Proyek
 ```text
-├── index.html (HTML, CSS, dan JavaScript)
+├── index.html (HTML, CSS, dan jQuery)
 └── README.md
 ```
 
-## Fitur Utama
+## Features
 - Form validasi client-side
-- Pengiriman data asynchronous dengan AJAX
+- Pengiriman data asynchronous dengan jQuery AJAX
 - Indikator loading
 - Feedback sukses/error
+- Penanganan FormData
 
 ## Elemen Koding Penting
 
-### 1. HTML Form Structure
+### 1. HTML Form Structure dan jQuery CDN
 ```html
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 <form id="ajaxForm">
     <div class="form-group">
         <label for="nama">Nama:</label>
@@ -28,52 +32,57 @@ Implementasi form sederhana menggunakan AJAX dengan Fetch API untuk pengiriman d
 
 ### 2. Event Listener dan Pengambilan Data
 ```javascript
-document.getElementById('ajaxForm').addEventListener('submit', function(e) {
-    e.preventDefault(); 
-    const formData = new FormData(form);
+$(document).ready(function() {
+    $('#ajaxForm').on('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+    });
 });
 ```
 
-### 3. Implementasi AJAX dengan Fetch API
+### 3. Implementasi jQuery AJAX
 ```javascript
-fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: formData
-})
+$.ajax({
+    url: 'https://jsonplaceholder.typicode.com/posts',
+    type: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(response) {
+        // Handle success
+    },
+    error: function(xhr, status, error) {
+        // Handle error
+    },
+    complete: function() {
+        // Handle completion
+    }
+});
 ```
 
 ### 4. Penanganan Response
 ```javascript
-.then(response => {
-    if (!response.ok) {
-        throw new Error('Response tidak valid');
-    }
-    return response.json();
-})
-.then(data => {
-    responseElement.className = 'success';
-    responseElement.innerHTML = '<strong>Sukses!</strong> Data berhasil dikirim.';
-    form.reset();
-})
+success: function(response) {
+    $('#response')
+        .removeClass('error')
+        .addClass('success')
+        .html('<strong>Sukses!</strong> Data berhasil dikirim.')
+        .show();
+    
+    $('#ajaxForm')[0].reset();
+}
 ```
 
 ### 5. Error Handling
 ```javascript
-.catch(error => {
-    responseElement.className = 'error';
-    responseElement.innerHTML = '<strong>Error!</strong> ' + error.message;
-    responseElement.style.display = 'block';
-})
+error: function(xhr, status, error) {
+    $('#response')
+        .removeClass('success')
+        .addClass('error')
+        .html('<strong>Error!</strong> ' + error)
+        .show();
+}
 ```
-
-## Cara Penggunaan
-1. Buka index.html di browser
-2. Isi form dengan data yang valid:
-   - Nama
-   - Email
-   - Pesan
-3. Klik tombol "Kirim"
-4. Perhatikan indikator loading dan pesan response
 
 
 ## Notes
