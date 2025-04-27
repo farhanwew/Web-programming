@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
+    <meta name="description" content="Portal berita terkini dan terupdate">
+    <meta name="keywords" content="berita, news, teknologi, pendidikan, olahraga">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">News</div>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="cari topik atau peristiwa...">
+                    <button onclick="performSearch()">Search</button>
+                </div>
+                <div class="user-menu">
+                    <button class="login-btn">Login</button>
+                    <button class="signup-btn">Sign Up</button>
+                </div>    
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="#" onclick="filterCategory('Teknologi')">Teknologi</a></li>
+                <li><a href="#" onclick="filterCategory('Pendidikan')">Pendidikan</a></li>
+                <li><a href="#" onclick="filterCategory('Olahraga')">Olahraga</a></li>
+                <li><a href="#" onclick="filterCategory('Otomotif')">Otomotif</a></li>
+                <li><a href="#" onclick="filterCategory('Kesehatan')">Kesehatan</a></li>
+                <!-- <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <section class="featured-news">
+            <h2>Berita Utama</h2>
+            <div id="featured-container"></div>
+        </section>
+        <section class="all-news">
+            <h2>Berita Terkini</h2>
+            <div id="news-container" class="news-grid"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Barcelona Juara Copa del Rey",
+        "summary": "Barcelona berhasil mengalahkan Real Madrid di final.",
+        "content": "Dalam pertandingan final Copa del Rey yang berlangsung di Estadio La Cartuja in Seville, Barcelona berhasil mengalahkan rival abadi mereka, Real Madrid, dengan skor 3-2. Gol-gol dari pemain bintang mereka menjadi penentu kemenangan.",
+        "thumbnail": "https://akcdn.detik.net.id/community/media/visual/2025/04/27/barcelona-vs-real-madrid-final-copa-del-rey-el-clasico-pedri-1745704994903_169.jpeg?w=700&q=90",
+        "image": "https://akcdn.detik.net.id/visual/2025/04/27/barcelona-vs-real-madrid-1745714690132_43.jpeg0",
+        "author": "Sports News",
+        "date": "2025-04-27",
+        "category": "Olahraga",
+        "isFeatured": true
+    },
+    {
+        "id": 2,
+        "title": "AI Terbaru Mampu Prediksi Cuaca Lebih Akurat",
+        "summary": "Teknologi AI terbaru menggunakan deep learning untuk prediksi cuaca dengan akurasi 95%.",
+        "content": "Sebuah terobosan baru dalam teknologi AI telah berhasil meningkatkan akurasi prediksi cuaca hingga 95%. Sistem ini menggunakan deep learning dan data historis cuaca selama 50 tahun terakhir.",
+        "thumbnail": "https://example.com/ai-weather.jpg",
+        "image": "https://example.com/ai-weather-full.jpg",
+        "author": "Tech Review",
+        "date": "2025-04-27",
+        "category": "Teknologi",
+        "isFeatured": true
+    }
+]

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - News Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">News</div>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="cari topik atau peristiwa...">
+                    <button onclick="performSearch()">Search</button>
+                </div>
+                <div class="user-menu">
+                    <button class="login-btn">Login</button>
+                    <button class="signup-btn">Sign Up</button>
+                </div>    
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="#" onclick="filterCategory('Teknologi')">Teknologi</a></li>
+                <li><a href="#" onclick="filterCategory('Pendidikan')">Pendidikan</a></li>
+                <li><a href="#" onclick="filterCategory('Olahraga')">Olahraga</a></li>
+                <li><a href="#" onclick="filterCategory('Otomotif')">Otomotif</a></li>
+                <li><a href="#" onclick="filterCategory('Kesehatan')">Kesehatan</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <section class="search-results">
+            <h2>Hasil Pencarian</h2>
+            <div id="search-results-container"></div>
+        </section>
+    </main>
+</body>
+</html>
