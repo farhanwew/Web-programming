@@ -56,3 +56,7 @@ Saat klik kategori, filter berita berdasarkan kategori tersebut
 Informasi tentang Portal Berita
 
 ![About Us](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLr5bp3vgaCrVzFr84z3GxH0c7btMPt226_6O9tGW3RpbtpSpmG2jwVQTS0kI7ZnIw9VyCsyL4Byb4BTY92LiiGafesnqa1sg_b8vGr8rkPP45HWFEXQhuTpJA1zMwqIEmCNE0Buobqq8oWM9KmEg0Qd8HAYq_PItX75MxszBw4nmhdFUvSGqF5niBsWU/w463-h188/about%20us.gif)
+
+# PDF
+
+<iframe src="https://drive.google.com/file/d/1634NU381WWqCe17NZHsndvHAvKQrVxsB/preview" width="100%" height="600px" allow="autoplay"></iframe>
