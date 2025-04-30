@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Portal</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="description" content="Portal berita terkini dan terupdate">
     <script src="js/script.js" defer></script>
 </head>
@@ -28,18 +29,32 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="index.html">Beranda</a></li>
-                <!-- <li><a href="#" onclick="filterCategory('Teknologi')">Teknologi</a></li>
+                <li><a href="#" onclick="filterCategory('Teknologi')">Teknologi</a></li>
                 <li><a href="#" onclick="filterCategory('Pendidikan')">Pendidikan</a></li>
                 <li><a href="#" onclick="filterCategory('Olahraga')">Olahraga</a></li>
                 <li><a href="#" onclick="filterCategory('Otomotif')">Otomotif</a></li>
-                <li><a href="#" onclick="filterCategory('Kesehatan')">Kesehatan</a></li> -->
+                <li><a href="#" onclick="filterCategory('Kesehatan')">Kesehatan</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="#footer-section">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="content">
         <div id="news-detail-container" class="news-detail">
-            <!-- News detail will be loaded here -->
+            <article class="news-article">
+                <div class="image-container">
+                    <img id="news-image" src="" alt="News Image">
+                </div>
+                <div class="news-content">
+                    <h1 id="news-title"></h1>
+                    <div class="news-metadata">
+                        <span id="news-date"></span>
+                        <span id="news-author"></span>
+                    </div>
+                    <div id="news-body"></div>
+                </div>
+            </article>
         </div>
 
         <div class="actions">
@@ -51,14 +66,34 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Tentang Kami</h3>
-                <p>Portal berita terpercaya dengan informasi terkini dan terupdate</p>
+            <div class="footer-section" id="about-section">
+                <h3>About Us</h3>
+                <p>Portal berita terpercaya yang menyajikan informasi terkini dan akurat seputar teknologi, pendidikan, olahraga, otomotif, dan kesehatan.</p>
             </div>
             <div class="footer-section">
-                <h3>Kontak</h3>
-                <p>Email: info@newsportal.com</p>
-                <p>Phone: (021) 1234567</p>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat dan Ketentuan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" id="contact-section">
+                <h3>Contact Us</h3>
+                <p>Email: News@newsportal.com</p>
+                <p>Phone: (021) 123-4567</p>
+                <p>Address: Jl. Contoh No. 123, Jakarta</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

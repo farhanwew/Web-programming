@@ -8,6 +8,8 @@
     <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
     <meta name="description" content="Portal berita terkini dan terupdate">
     <meta name="keywords" content="berita, news, teknologi, pendidikan, olahraga">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -34,8 +36,8 @@
                 <li><a href="#" onclick="filterCategory('Olahraga')">Olahraga</a></li>
                 <li><a href="#" onclick="filterCategory('Otomotif')">Otomotif</a></li>
                 <li><a href="#" onclick="filterCategory('Kesehatan')">Kesehatan</a></li>
-                <!-- <li><a href="about.html">Tentang Kami</a></li>
-                <li><a href="contact.html">Kontak</a></li> -->
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="#contact-section">Kontak</a></li>
             </ul>
         </nav>
     </header>
@@ -49,5 +51,41 @@
             <div id="news-container" class="news-grid"></div>
         </section>
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section" id="about-section">
+                <h3>About Us</h3>
+                <p>Portal berita terpercaya yang menyajikan informasi terkini dan akurat seputar teknologi, pendidikan, olahraga, otomotif, dan kesehatan.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat dan Ketentuan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" id="contact-section">
+                <h3>Contact Us</h3>
+                <p>Email: News@newsportal.com</p>
+                <p>Phone: (021) 123-4567</p>
+                <p>Address: Jl. Contoh No. 123, Jakarta</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 News Portal. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

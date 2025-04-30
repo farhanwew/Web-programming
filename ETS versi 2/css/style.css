@@ -5,6 +5,10 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Header styles */
 .header-top {
     background: linear-gradient(135deg, #ffffff, #92c7eb);
@@ -87,8 +91,12 @@
 
 /* Navigation styles */
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background-color: #f8f9fa;
     padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .nav-menu {
@@ -160,10 +168,20 @@ nav {
     overflow: hidden;
 }
 
-.featured-news-item img {
-    width: 50%;
-    height: 400px;
-    object-fit: cover;
+/* Featured news section image */
+#featured-container img {
+    width: 500px;          /* Fixed width */
+    height: 350px;         /* Fixed height */
+    object-fit: cover;     /* Maintain aspect ratio */
+    object-position: center;/* Center the image */
+    border-radius: 8px;    /* Rounded corners */
+}
+
+@media (max-width: 768px) {
+    #featured-container img {
+        width: 100%;       /* Full width on mobile */
+        height: 300px;     /* Slightly reduced height on mobile */
+    }
 }
 
 .featured-news-content {
@@ -253,13 +271,14 @@ nav {
     height: 100%;
 }
 
+/* Search results card image */
 #search-results-container .news-card img {
-    width: 100%;
+    width: 350px;
     height: 220px;
     object-fit: cover;
+    object-position: center;
 }
 
-/* Search Results Clickable Styles */
 #search-results-container .news-card h3 {
     cursor: pointer;
     color: #333;
@@ -315,9 +334,33 @@ nav {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
+    
+    .featured-news-item img {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .news-card img {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .news-detail-image {
+        width: 100%;
+        height: 350px;
+    }
+    
+    #search-results-container .news-card img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: 300px;
+    }
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .container {
         flex-wrap: wrap;
@@ -380,10 +423,12 @@ nav {
     margin-bottom: 30px;
 }
 
+/* Regular news card image */
 .news-card img {
-    width: 50%;
+    width: 400px;
     height: 300px;
     object-fit: cover;
+    object-position: center;
 }
 
 .card-content {
@@ -433,31 +478,26 @@ nav {
 }
 
 /* Footer Styles */
-.footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    margin-top: 4rem;
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 50px;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
 }
 
 .footer-section h3 {
-    color: #ffffff;
-    margin-bottom: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
     font-size: 1.2rem;
-}
-
-.footer-section p {
-    color: #cccccc;
-    line-height: 1.6;
-    margin-bottom: 1rem;
 }
 
 .footer-section ul {
@@ -466,24 +506,28 @@ nav {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-    color: #cccccc;
+    color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: #007bff;
+    color: #ddd;
 }
 
 .footer-bottom {
-    background-color: #111111;
     text-align: center;
-    padding: 1.5rem 1rem;
-    color: #888888;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Responsive Footer */
@@ -513,10 +557,12 @@ nav {
     flex: 0 0 300px;
 }
 
+/* News Article Image */
 .news-image img {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
+    object-position: center;
 }
 
 .news-content {
@@ -570,12 +616,15 @@ nav {
     align-items: center;
 }
 
+/* News detail page main image */
 .news-detail-image {
-    width: 100%;
-    max-height: 500px;
+    width: 800px;
+    height: 500px;
     object-fit: cover;
+    object-position: center;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
+    display: block;
 }
 
 .news-detail-summary {
@@ -655,4 +704,102 @@ nav {
     .news-detail-content {
         font-size: 1rem;
     }
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #ccc;
+}
+
+.fab.fa-facebook:hover { color: #1877f2; }
+.fab.fa-twitter:hover { color: #1da1f2; }
+.fab.fa-instagram:hover { color: #e4405f; }
+.fab.fa-linkedin:hover { color: #0077b5; }
+.fab.fa-youtube:hover { color: #ff0000; }
+/* About Page Styles */
+.about-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.about-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.about-section h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.about-description h2 {
+    color: #444;
+    font-size: 1.8em;
+    margin: 25px 0 15px;
+}
+
+.about-description p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-description ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.about-description ul li {
+    color: #666;
+    line-height: 1.8;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 0.9em;
 }

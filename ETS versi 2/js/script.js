@@ -14,25 +14,41 @@ async function loadNews() {
 }
 
 function filterCategory(category) {
-    const filteredNews = category ? 
-        allNewsData.filter(news => news.category === category) : 
-        allNewsData;
-
     if (category === 'Beranda' || !category) {
-        // Show all featured news on homepage
-        displayFeaturedNews(allNewsData.filter(item => item.isFeatured));
-        displayAllNews(allNewsData);
-        document.querySelector('.all-news h2').textContent = 'Berita Terkini';
+        window.location.href = 'index.html';
     } else {
-        // Show only featured news from selected category
+        window.location.href = `category.html?category=${encodeURIComponent(category)}`;
+    }
+}
+
+async function loadCategoryPage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    
+    if (!category) {
+        window.location.href = 'index.html';
+        return;
+    }
+
+    try {
+        const response = await fetch('data/berita.json');
+        const allNews = await response.json();
+        const filteredNews = allNews.filter(news => news.category === category);
+        
+        // Show featured news from category
         const featuredInCategory = filteredNews.filter(item => item.isFeatured);
         displayFeaturedNews(featuredInCategory);
         displayAllNews(filteredNews);
+        
+        // Update page title and heading
+        document.title = `${category} - News Portal`;
         document.querySelector('.all-news h2').textContent = `Berita ${category}`;
+        
+        // Update active state in navigation
+        updateActiveNavigation(category);
+    } catch (error) {
+        console.error('Error loading category:', error);
     }
-
-    // Update active state in navigation
-    updateActiveNavigation(category);
 }
 
 function updateActiveNavigation(category) {
@@ -213,12 +229,36 @@ async function loadNewsDetail() {
     }
 }
 
+function loadCategoryNews(category) {
+    const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = ''; // Clear existing content
+    
+    // Update category title
+    const categoryTitle = document.getElementById('selected-category');
+    if (categoryTitle) {
+        categoryTitle.textContent = category;
+    }
+
+    // Filter news by category
+    const categoryNews = allNews.filter(news => 
+        category === 'All' ? true : news.category === category
+    );
+
+    // Display filtered news
+    categoryNews.forEach(news => {
+        const newsCard = createNewsCard(news);
+        newsContainer.appendChild(newsCard);
+    });
+}
+
 // Add event listeners
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('news-detail.html')) {
         loadNewsDetail();
     } else if (window.location.pathname.includes('search.html')) {
         displaySearchResults();
+    } else if (window.location.pathname.includes('category.html')) {
+        loadCategoryPage();
     } else {
         loadNews(); // For the main page
     }

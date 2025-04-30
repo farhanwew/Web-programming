@@ -4,6 +4,7 @@ vendor/
 bower_components/
 news portal/refrensi/
 
+
 # Environment files
 .env
 .env.local
