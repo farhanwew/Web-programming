@@ -3,7 +3,7 @@
 Aplikasi web halaman berita yang menyajikan berbagai artikel, dilengkapi dengan gambar, tanggal publikasi, penulis dan fitur pencarian berita. Sebuah web portal berita sederhana yang informatif dan responsif yang dibuat untuk memberikan informasi berita terkini yang dibuat dengan layout nya dengan HTML dan CSS. Untuk Fitur interaktif menggunakn Java Script.
 
 - Link untuk Blog: [Link-To-Blog](https://farhanaryawicaksono.blogspot.com/2025/04/ets-dokumentasi-proyek-portal-berita.html)
-- Link untuk Source Code :[Link Source Code](https://github.com/farhanwew/Web-programming/tree/main/ETS%20versi%202)
+- Link untuk Source Code :[Link Source Code](https://github.com/farhanwew/Web-programming/tree/main/ETS%20Web%20project)
 - Link untuk Hasil (Page) : [Link-To-Page](https://farhanwew.github.io/Web-programming/ETS%20Web%20project/index.html)
 
 ## Fitur Fitur Aplikasi
