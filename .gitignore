@@ -10,6 +10,18 @@ news portal/refrensi/
 .env.local
 .env.*.local
 
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv
+env/
+ENV/
+env.bak/
+venv.bak/
+
 # Build output
 dist/
 build/
