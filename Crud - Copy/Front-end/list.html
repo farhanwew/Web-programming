@@ -1,0 +1,70 @@
+<div class="list-container">
+    <h2>Mahasiswa yang Sudah Mendaftar</h2>
+    <a href="#" id="tambah-baru" class="btn-add">Tambah Baru</a>
+    
+    <div class="table-container">
+        <table id="mahasiswa-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Program Studi</th>
+                    <th>Tindakan</th>
+                </tr>
+            </thead>
+            <tbody id="mahasiswa-list">
+                <!-- Data akan diisi melalui JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <div id="list-message" class="message"></div>
+</div>
+
+<!-- Modal untuk edit -->
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Data Mahasiswa</h2>
+        <form id="edit-form">
+            <input type="hidden" id="edit-id">
+            
+            <div class="form-group">
+                <label for="edit-nama">Nama</label>
+                <input type="text" id="edit-nama" name="nama" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-alamat">Alamat</label>
+                <textarea id="edit-alamat" name="alamat" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="edit_jenis_kelamin" id="edit-laki" value="Laki-laki" required>
+                        Laki-laki
+                    </label>
+                    <label>
+                        <input type="radio" name="edit_jenis_kelamin" id="edit-perempuan" value="Perempuan">
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-prodi">Program Studi</label>
+                <select id="edit-prodi" name="prodi" required>
+                    <option value="">Pilih Program Studi</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Rekayasa Kecerdasan Artifisal">Rekayasa Kecerdasan Artifisal</option>
+                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                </select>
+            </div>
+            
+            <button type="submit" id="update-btn">Update</button>
+        </form>
+    </div>
+</div>
