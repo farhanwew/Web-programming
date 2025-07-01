@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4facfe;
+        }
+
+        .form-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .btn-warning {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .btn-warning:hover {
+            background: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        .students-section {
+            margin-top: 30px;
+        }
+
+        .students-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .student-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e1e5e9;
+            transition: all 0.3s ease;
+        }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .student-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #4facfe;
+        }
+
+        .student-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .student-info p {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .student-actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .student-actions .btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4facfe;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .students-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .students-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Student Management System</h1>
+            <p>Sistem Manajemen Data Mahasiswa</p>
+        </div>
+
+        <div class="content">
+            <!-- Form Section -->
+            <div class="form-section">
+                <h2 id="form-title">Tambah Data Mahasiswa</h2>
+                
+                <div id="alert-container"></div>
+                
+                <form id="student-form" enctype="multipart/form-data">
+                    <input type="hidden" id="student-id" name="student_id">
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nrp">NRP *</label>
+                            <input type="text" id="nrp" name="nrp" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin *</label>
+                            <select id="jenis_kelamin" name="jenis_kelamin" required>
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telpon">Nomor Telepon *</label>
+                            <input type="tel" id="telpon" name="telpon" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="photo">Foto</label>
+                            <input type="file" id="photo" name="photo" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="alamat">Alamat *</label>
+                        <textarea id="alamat" name="alamat" required placeholder="Masukkan alamat lengkap..."></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-top: 25px;">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            <span id="submit-text">Simpan Data</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-btn" onclick="resetForm()" style="display: none;">
+                            Batal
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Students List Section -->
+            <div class="students-section">
+                <div class="students-header">
+                    <h2>Daftar Mahasiswa</h2>
+                    <button class="btn btn-primary" onclick="loadStudents()">Refresh Data</button>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Memuat data...</p>
+                </div>
+                
+                <div class="students-grid" id="students-container">
+                    <!-- Students will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Photo Zoom Modal -->
+    <div id="photo-modal" class="modal">
+        <div class="modal-content" style="max-width: 800px; text-align: center;">
+            <span class="close" onclick="closePhotoModal()">&times;</span>
+            <h2 id="modal-student-name" style="margin-bottom: 15px;"></h2>
+            <img id="modal-photo" src="" alt="Student Photo" style="max-width: 100%; max-height: 70vh; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        </div>
+    </div>
+
+    <script>
+        let isEditMode = false;
+        let currentEditId = null;
+
+        // Load students when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStudents();
+        });
+
+        // Form submission
+        document.getElementById('student-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const originalText = submitText.textContent;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Menyimpan...';
+            
+            const formData = new FormData(this);
+            
+            try {
+                let response;
+                if (isEditMode && currentEditId) {
+                    response = await fetch(`/api/students/${currentEditId}`, {
+                        method: 'PUT',
+                        body: formData
+                    });
+                } else {
+                    response = await fetch('/api/students', {
+                        method: 'POST',
+                        body: formData
+                    });
+                }
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showAlert('Data berhasil disimpan!', 'success');
+                    resetForm();
+                    loadStudents();
+                } else {
+                    showAlert(result.detail || 'Terjadi kesalahan!', 'error');
+                }
+            } catch (error) {
+                showAlert('Terjadi kesalahan koneksi!', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitText.textContent = originalText;
+            }
+        });
+
+        // Load students
+        async function loadStudents() {
+            const container = document.getElementById('students-container');
+            const loading = document.getElementById('loading');
+            
+            loading.style.display = 'block';
+            container.innerHTML = '';
+            
+            try {
+                const response = await fetch('/api/students');
+                const students = await response.json();
+                
+                if (students.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">Belum ada data mahasiswa.</p>';
+                } else {
+                    container.innerHTML = students.map(student => `
+                        <div class="student-card">
+                            ${student.photo ? 
+                                `<img src="/uploads/${student.photo}" alt="${student.nama}" class="student-photo" 
+                                     onclick="openPhotoModal('/uploads/${student.photo}', '${student.nama}')" 
+                                     style="cursor: pointer;" title="Klik untuk memperbesar">` : 
+                                '<div class="student-photo" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999;">No Photo</div>'}
+                            <div class="student-info">
+                                <h3>${student.nama}</h3>
+                                <p><strong>NRP:</strong> ${student.nrp}</p>
+                                <p><strong>Jenis Kelamin:</strong> ${student.jenis_kelamin}</p>
+                                <p><strong>Telepon:</strong> ${student.telpon}</p>
+                                <p><strong>Alamat:</strong> ${student.alamat}</p>
+                                <p><strong>Tanggal:</strong> ${new Date(student.created_at).toLocaleDateString('id-ID')}</p>
+                            </div>
+                            <div class="student-actions">
+                                <button class="btn btn-warning" onclick="editStudent(${student.id})">Edit</button>
+                                <button class="btn btn-danger" onclick="deleteStudent(${student.id})">Hapus</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                container.innerHTML = '<p style="text-align: center; color: #dc3545; grid-column: 1/-1;">Gagal memuat data!</p>';
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+
+        // Edit student
+        async function editStudent(id) {
+            try {
+                const response = await fetch(`/api/students/${id}`);
+                const student = await response.json();
+                
+                if (response.ok) {
+                    // Fill form with student data
+                    document.getElementById('student-id').value = student.id;
+                    document.getElementById('nrp').value = student.nrp;
+                    document.getElementById('nama').value = student.nama;
+                    document.getElementById('jenis_kelamin').value = student.jenis_kelamin;
+                    document.getElementById('telpon').value = student.telpon;
+                    document.getElementById('alamat').value = student.alamat;
+                    
+                    // Update form state
+                    isEditMode = true;
+                    currentEditId = id;
+                    document.getElementById('form-title').textContent = 'Edit Data Mahasiswa';
+                    document.getElementById('submit-text').textContent = 'Update Data';
+                    document.getElementById('cancel-btn').style.display = 'inline-block';
+                    
+                    // Scroll to form
+                    document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    showAlert('Gagal memuat data mahasiswa!', 'error');
+                }
+            } catch (error) {
+                showAlert('Terjadi kesalahan koneksi!', 'error');
+            }
+        }
+
+        // Delete student
+        async function deleteStudent(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                try {
+                    const response = await fetch(`/api/students/${id}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        showAlert('Data berhasil dihapus!', 'success');
+                        loadStudents();
+                    } else {
+                        showAlert(result.detail || 'Gagal menghapus data!', 'error');
+                    }
+                } catch (error) {
+                    showAlert('Terjadi kesalahan koneksi!', 'error');
+                }
+            }
+        }
+
+        // Reset form
+        function resetForm() {
+            document.getElementById('student-form').reset();
+            document.getElementById('student-id').value = '';
+            isEditMode = false;
+            currentEditId = null;
+            document.getElementById('form-title').textContent = 'Tambah Data Mahasiswa';
+            document.getElementById('submit-text').textContent = 'Simpan Data';
+            document.getElementById('cancel-btn').style.display = 'none';
+            clearAlert();
+        }
+
+        // Show alert
+        function showAlert(message, type) {
+            const container = document.getElementById('alert-container');
+            container.innerHTML = `
+                <div class="alert alert-${type}">
+                    ${message}
+                </div>
+            `;
+            
+            // Auto hide after 5 seconds
+            setTimeout(clearAlert, 5000);
+        }
+
+        // Clear alert
+        function clearAlert() {
+            document.getElementById('alert-container').innerHTML = '';
+        }
+
+        // Photo modal functions
+        function openPhotoModal(photoUrl, studentName) {
+            const modal = document.getElementById('photo-modal');
+            const modalPhoto = document.getElementById('modal-photo');
+            const modalStudentName = document.getElementById('modal-student-name');
+            
+            modalPhoto.src = photoUrl;
+            modalStudentName.textContent = studentName;
+            modal.style.display = 'block';
+            
+            // Close when clicking outside the image
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    closePhotoModal();
+                }
+            };
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closePhotoModal();
+                }
+            });
+        }
+        
+        function closePhotoModal() {
+            document.getElementById('photo-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
