@@ -13,8 +13,8 @@ RUN pip install gunicorn
 COPY . .
 
 # Set default environment variables (can be overridden at runtime)
-ENV MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/ \
-    MONGO_DB_NAME=student_reports \
+ENV MONGO_URI="" \
+    MONGO_DB_NAME="student_reports" \
     PORT=7860
 
 # Expose the port that Gunicorn will run on
